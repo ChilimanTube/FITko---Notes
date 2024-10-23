@@ -25,17 +25,15 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
+      - name: List all Markdown files (for debugging)
+        run: find . -name '*.md'
 
       - name: Install Pandoc and dependencies
         run: sudo apt-get install -y pandoc texlive-xetex
 
       - name: Convert Markdown to PDF
         run: |
-          for file in *.md; do
+          find . -name '*.md' | while read file; do
             pandoc "$file" -o "${file%.md}.pdf"
           done
 
@@ -43,4 +41,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: pdf-files
-          path: '*.pdf'
+          path: '**/*.pdf'
