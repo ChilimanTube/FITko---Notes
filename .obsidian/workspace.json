@@ -11,14 +11,12 @@
             "id": "611092c8a36db0c4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "ILG/Lineární kombinace.md",
-                "mode": "source",
-                "source": false
+                "file": "HKO/Diagramy/Diagram 1.svg"
               },
-              "icon": "lucide-file",
-              "title": "Lineární kombinace"
+              "icon": "lucide-image",
+              "title": "Diagram 1"
             }
           }
         ]
@@ -206,43 +204,44 @@
       "peerdraft:Show my Peerdraft Shares": false
     }
   },
-  "active": "611092c8a36db0c4",
+  "active": "796e3efa904cb37c",
   "lastOpenFiles": [
-    "ILG/Součin matic.md",
+    "HKO/Diagramy",
+    "Untitled 1.md",
+    "HKO/Diagramy/Diagram 1.svg",
+    "Untitled.md",
+    "Test Diagram.md",
+    "HKO/Diagramy/Diagram.svg",
+    "IUS/Semináře/ER Diagramy.md",
+    "Dump/Imgs/Pasted image 20241016145245.png",
+    "Dump/Imgs/Pasted image 20241016144934.png",
+    "Dump/Imgs/Pasted image 20241016144435.png",
+    "Dump/Imgs/Pasted image 20241016143752.png",
+    "Dump/Imgs/Pasted image 20241016143425.png",
+    "Dump/Imgs/Pasted image 20241016143131.png",
+    "Dump/Imgs/Pasted image 20241016142559.png",
+    "Dump/Imgs/Pasted image 20241016142440.png",
+    "Dump/Imgs",
+    "Dump",
     "ILG/Lineární kombinace.md",
+    "ILG/Součin matic.md",
     "ILG/Vektorové prostory.md",
     "IEL/Semináře/Přechodové děje v RLC obvodech.md",
     "HKO/Zásady práce s informacemi.md",
-    "IUS/Diagramy/Návrh Školního Systému.svg",
-    "Diagram 1.svg.xml",
-    "Diagram 1.svg",
+    "HKO/Diagramy/Diagram 1.svg.xml",
     "IEL/Přednášky/Polovodiče, diody.md",
-    "Pasted image 20241016145245.png",
-    "Pasted image 20241016144934.png",
-    "Pasted image 20241016144435.png",
     "IEL/Přednášky/Přechodové jevy.md",
     "IEL/Přednášky/Přechodové jevy na RC, RL , RLC a vedení.md",
     "Monoid.md",
-    "Pasted image 20241016143752.png",
-    "Pasted image 20241016143425.png",
-    "Pasted image 20241016143131.png",
-    "Pasted image 20241016142559.png",
-    "Pasted image 20241016142440.png",
-    "IUS/Semináře/ER Diagramy.md",
-    "Diagram.svg.xml",
+    "HKO/Diagramy/Diagram.svg.xml",
     "IUS/Diagramy/Čajíčky - Diagram.svg.xml",
     "IUS/Diagramy",
     "IUS/Diagramy/Návrh Školního Systému.svg.xml",
     "HKO/Manažerská komunikace.md",
     "HKO/Znalosti.canvas",
-    "Test Diagram.md",
-    "Untitled 1.md",
     "IUS/Přednášky",
     "IUS/Semináře",
     "IUS",
-    "Untitled.md",
-    "ILG",
-    "IEL/Semináře",
     "Welcome.md"
   ]
 }
