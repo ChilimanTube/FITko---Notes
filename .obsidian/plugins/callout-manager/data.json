@@ -1,0 +1,76 @@
+{
+  "callouts": {
+    "custom": [
+      "test",
+      "vzorec",
+      "term",
+      "definition",
+      "excercise",
+      "source"
+    ],
+    "settings": {
+      "test": [
+        {
+          "changes": {
+            "icon": "lucide-calendar-clock"
+          }
+        },
+        {
+          "condition": {
+            "colorScheme": "light"
+          },
+          "changes": {}
+        },
+        {
+          "condition": {
+            "colorScheme": "dark"
+          },
+          "changes": {
+            "color": "255, 0, 0"
+          }
+        }
+      ],
+      "vzorec": [
+        {
+          "changes": {
+            "icon": "math",
+            "color": "0, 191, 255"
+          }
+        }
+      ],
+      "term": [
+        {
+          "changes": {
+            "color": "82, 255, 84"
+          }
+        }
+      ],
+      "definition": [
+        {
+          "changes": {
+            "color": "213, 240, 10"
+          }
+        }
+      ],
+      "excercise": [
+        {
+          "changes": {
+            "icon": "lucide-brain-circuit"
+          }
+        }
+      ],
+      "source": [
+        {
+          "changes": {
+            "icon": "lucide-book-down"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

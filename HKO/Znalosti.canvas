@@ -1,0 +1,12 @@
+{
+	"nodes":[
+		{"id":"c2b62883c8e9145e","x":220,"y":-220,"width":290,"height":380,"type":"group","label":"Untitled group"},
+		{"id":"25abf6b8e74889f8","x":240,"y":-200,"width":250,"height":60,"type":"text","text":"Znát"},
+		{"id":"173841fc39f21df9","x":240,"y":-60,"width":250,"height":60,"type":"text","text":"Uvědomovat"},
+		{"id":"7ed13e510c021fea","x":240,"y":80,"width":250,"height":60,"type":"text","text":"Používat"}
+	],
+	"edges":[
+		{"id":"129a88698c57e4d5","fromNode":"25abf6b8e74889f8","fromSide":"bottom","toNode":"173841fc39f21df9","toSide":"top"},
+		{"id":"da9ad1c6b09d0dee","fromNode":"173841fc39f21df9","fromSide":"bottom","toNode":"7ed13e510c021fea","toSide":"top"}
+	]
+}
