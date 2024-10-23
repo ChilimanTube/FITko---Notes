@@ -2,7 +2,7 @@
 
 ## Vedení
 - Typické parametry vedení:
-	- **Charakteristická impedance** $Z [\ohm]$
+	- **Charakteristická impedance** $Z [\Omega]$
 		- $Z = \sqrt{ \frac{L_{m}}{C_{m}} }$
 	- **Délka** (určuje útlum a zpoždění signálu)
 	- $L_{m}, C_{m}, R_{m}, G_{m}$ na jednotku délky
