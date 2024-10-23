@@ -4,14 +4,12 @@ name: MD to PDF Conversion
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    paths:
+      - 'MD/**'  # Trigger action only when files in the MD directory change
+  workflow_dispatch:
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,22 +21,49 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v3
-
-      - name: List all Markdown files (for debugging)
-        run: find . -name '*.md'
+        uses: actions/checkout@v4
 
       - name: Install Pandoc and dependencies
-        run: sudo apt-get install -y pandoc texlive-xetex
+        run: sudo apt-get install -y pandoc texlive-xetex texlive-science texlive-latex-extra
 
-      - name: Convert Markdown to PDF
+      - name: Ensure PDF directory exists
+        run: mkdir -p PDF
+
+      - name: Find and convert modified or new Markdown files
         run: |
-          find . -name '*.md' | while read file; do
-            pandoc "$file" -o "${file%.md}.pdf"
+          # Loop through all Markdown files in the MD folder
+          find MD/ -name '*.md' | while read mdfile; do
+            # Create corresponding PDF file path by replacing MD/ with PDF/ and changing extension
+            pdffile=${mdfile/MD/PDF}
+            pdffile=${pdffile%.md}.pdf
+
+            # Ensure the output directory exists
+            mkdir -p $(dirname "$pdffile")
+
+            # Convert to PDF if the PDF doesn't exist or the MD file is newer
+            if [[ ! -f "$pdffile" || "$mdfile" -nt "$pdffile" ]]; then
+              pandoc "$mdfile" --pdf-engine=xelatex -o "$pdffile"
+              echo "Converted $mdfile to $pdffile"
+            fi
           done
 
-      - name: Upload PDFs as artifacts
+      - name: Clean up deleted markdown PDFs
+        run: |
+          # Loop through all PDF files
+          find PDF/ -name '*.pdf' | while read pdffile; do
+            # Create corresponding MD file path by replacing PDF/ with MD/ and changing extension
+            mdfile=${pdffile/PDF/MD}
+            mdfile=${mdfile%.pdf}.md
+
+            # Delete the PDF if the corresponding MD file no longer exists
+            if [[ ! -f "$mdfile" ]]; then
+              rm "$pdffile"
+              echo "Deleted $pdffile as $mdfile no longer exists"
+            fi
+          done
+
+      - name: Upload PDFs as artifacts (optional)
         uses: actions/upload-artifact@v3
         with:
           name: pdf-files
-          path: '**/*.pdf'
+          path: 'PDF/**'
